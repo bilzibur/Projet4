@@ -1,0 +1,12 @@
+package org.projet.beans;
+
+import java.util.List;
+
+public class Client extends Personne{
+	
+	private long idclient ;
+	
+	private List<CompteBancaire> ListComptes;
+	
+
+}

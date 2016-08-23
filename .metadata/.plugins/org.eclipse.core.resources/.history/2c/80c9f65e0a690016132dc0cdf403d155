@@ -1,0 +1,11 @@
+package org.projet.beans;
+
+public class Client {
+	
+	private int id;
+	
+	private String nom;
+	private String prenom;
+	private Adresse adresse;
+
+}

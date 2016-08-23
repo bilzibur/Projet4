@@ -1,0 +1,33 @@
+package org.projet.beans;
+
+public class Personne {
+
+	private long id;
+
+	private String nom;
+	private String prenom;
+	private Adresse adresse;
+	private String telephone;
+	private String email;
+	
+	
+//	Constructeur par defaut
+	public Personne() {
+
+	}
+
+
+//constructeur "complet"
+	public Personne(long id, String nom, String prenom, Adresse adresse, String telephone, String email) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.adresse = adresse;
+		this.telephone = telephone;
+		this.email = email;
+	}
+	
+	
+
+}

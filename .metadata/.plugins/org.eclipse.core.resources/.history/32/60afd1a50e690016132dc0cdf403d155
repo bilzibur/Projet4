@@ -1,0 +1,24 @@
+package org.projet.beans;
+
+import java.util.List;
+
+public class ConseillerClient extends Personne{
+	
+private String password;
+private String loging;
+
+private List<Client> listeClients;
+private List<CompteBancaire> listeComptes;
+
+//Constructeur par defaut
+public ConseillerClient() {
+
+}
+
+
+
+
+
+
+
+}

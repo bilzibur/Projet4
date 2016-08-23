@@ -1,0 +1,18 @@
+package org.projet.beans;
+
+public class ConseillerClient extends Personne{
+	
+private String password;
+
+//Constructeur par defaut
+public ConseillerClient() {
+
+}
+
+
+
+
+
+
+
+}

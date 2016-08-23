@@ -1,0 +1,10 @@
+package org.projet.beans;
+
+public class Adresse {
+
+	private String rue;
+	private String ville;
+	private String numero;
+	
+	
+}

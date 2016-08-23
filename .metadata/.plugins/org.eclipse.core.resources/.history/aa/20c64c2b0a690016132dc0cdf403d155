@@ -1,0 +1,10 @@
+package org.projet.beans;
+
+public class ConseillerClient {
+	
+private int id;
+	
+	private String nom;
+	private String prenom;
+
+}

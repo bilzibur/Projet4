@@ -1,0 +1,22 @@
+package org.projet.beans;
+
+public class Adresse {
+
+	private String rue;
+	private String ville;
+	private String numero;
+
+	// Constructeur par defaut
+	public Adresse() {
+
+	}
+
+	// Constructeur "complet"
+	public Adresse(String rue, String ville, String numero) {
+		super();
+		this.rue = rue;
+		this.ville = ville;
+		this.numero = numero;
+	}
+
+}

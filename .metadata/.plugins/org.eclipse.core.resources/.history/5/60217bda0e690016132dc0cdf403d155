@@ -1,0 +1,28 @@
+package org.projet.beans;
+
+import java.util.List;
+
+public class Gerant extends ConseillerClient {
+
+	private List<ConseillerClient> listeConseillerClients;
+
+	
+	
+	
+	
+	public Gerant() {
+	
+	}
+
+
+
+
+
+	public Gerant(List<ConseillerClient> listeConseillerClients) {
+		super();
+		this.listeConseillerClients = listeConseillerClients;
+	}
+	
+	
+	
+}

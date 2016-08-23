@@ -1,0 +1,8 @@
+package org.projet.beans;
+
+public abstract class CompteBancaire {
+	
+	
+
+
+}

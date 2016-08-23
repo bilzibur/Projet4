@@ -1,0 +1,7 @@
+package org.projet.beans;
+
+public class Client extends Personne{
+	
+	
+
+}

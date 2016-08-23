@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+<ui:composition template="/WEB-INF/tagsProxi/layoutProxy.xhtml">
+<!-- à completer avec le layout -->
+		<ui:define name="content">
+		
+		<!-- message de bienvenue; à refaire -->
+			<h:div class=container>
+				<p>Bienvenu(e) M/Mme, #{conseiller.nom} .</p>
+				<p>Vous pouvez modifier les coordonnées du client #{client.idclient}</p>
+			</h:div>
+			
+			<p:button outcome="login" value="Deconnexion"
+				icon="ui-icon-squaresmall-close">
+			</p:button>
+			
+			<!-- tableau modification d'un client -->
+			<h:form id="form">
+   <p:growl id="msgs" showDetail="true"/>
+ 
+   <p:dataTable id="client" var="car" value="#{dtEditView.client}" editable="true" style="margin-bottom:20px">
+       <f:facet name="header">
+           Modification des coordonnées du client #{client.idclient}
+       </f:facet>
+ 
+       <p:ajax event="rowEdit" listener="#{dtEditView.onRowEdit}" update=":form:msgs" />
+       <p:ajax event="rowEditCancel" listener="#{dtEditView.onRowCancel}" update=":form:msgs" />
+ 
+       <p:column headerText="Nom">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{client.nom}" /></f:facet>
+               <f:facet name="input"><p:inputText id="modelInput" value="#{client.nom}" style="width:100%"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+ 
+       <p:column headerText="Prenom">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{client.prenom}" /></f:facet>
+               <f:facet name="input"><p:inputText value="#{client.prenom}" style="width:100%" label="Prenom"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+ 
+       <p:column headerText="Adresse">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{client.adresse}" /></f:facet>
+               <f:facet name="input"><p:inputText value="#{client.adresse}" style="width:100%" label="Adresse"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+ 
+       <p:column headerText="Telephone">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{client.telephone}" /></f:facet>
+               <f:facet name="input"><p:inputText value="#{client.telephone}" style="width:100%" label="Telephone"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+       
+       <p:column headerText="E-mail">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{client.email}" /></f:facet>
+               <f:facet name="input"><p:inputText value="#{client.email}" style="width:100%" label="E-mail"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+ 
+       <p:column style="width:32px">
+           <p:rowEditor />
+       </p:column>
+   </p:dataTable>
+   </h:form>
+		
+		
+		</ui:define>
+		
+</ui:composition>		
+</body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<body>
+	<ui:composition template="/WEB-INF/tagsProxi/layoutProxy.xhtml">
+		<!-- à completer avec le layout -->
+		<ui:define name="content">
+			<!-- message de bienvenue; à refaire -->
+			<h:div class=container>
+				<p>Bienvenu(e) M/Mme, #{conseiller.nom} .</p>
+				<p>Voici les operations disponibles pour le client
+					#{client.idclient}</p>
+			</h:div>
+
+			<p:button outcome="login" value="Deconnexion"
+				icon="ui-icon-squaresmall-close">
+			</p:button>
+
+
+			<!-- menu pour choisir l'action -->
+			<h:form>
+				<p:growl autoUpdate="true" />
+
+				<p:panelMenu style="width:300px">
+					<p:submenu label="Virement compte à compte">
+						<p:menuitem outcome="virement"/>
+					</p:submenu>
+					<p:submenu label="Retrait">
+						<p:menuitem outcome="retrait"/> 
+					</p:submenu>
+					<p:separator />
+					<p:submenu label="Versement">
+						<p:menuitem outcome="versement"/> 
+					</p:submenu>
+				</p:panelMenu>
+			</h:form>
+
+		</ui:define>
+
+	</ui:composition>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:body>
+	<ui:composition template="/WEB-INF/tagsProxi/layoutProxy.xhtml">
+		<!-- à completer avec le layout -->
+		<ui:define name="content">
+
+<!-- message de bienvenue; à refaire -->
+			<h:div class=container>
+				<p>Bienvenu(e) M/Mme, #{gerant.nom} .</p>
+				<p>Voici vos conseillers acutellement en ligne.</p>
+			</h:div>
+			
+			<p:button outcome="login" value="Deconnexion"
+				icon="ui-icon-squaresmall-close">
+			</p:button>
+			
+<!-- tableau conseillers -->
+			<h:form id="form">
+<p:dataTable var="conseiller" value="#{gerant.listeconseillers}" sortMode="multiple">
+        <f:facet name="header">
+            Conseillers Agence Paris 13
+        </f:facet>
+        <p:column headerText="Id" sortBy="#{conseiller.idConseiller}">
+            <h:outputText value="#{conseiller.idConseiller}" />
+        </p:column>
+ 
+        <p:column headerText="Nom" sortBy="#{conseiller.nom}">
+            <h:outputText value="#{conseiller.nom}" />
+        </p:column>
+ 
+        <p:column headerText="Prenom" sortBy="#{conseiller.prenom}">
+            <h:outputText value="#{conseiller.prenom}" />
+        </p:column>
+ 
+        <p:column headerText="Adresse" sortBy="#{conseiller.adresse}">
+            <h:outputText value="#{conseiller.adresse}" />
+        </p:column>
+        
+        <p:column headerText="Tel" sortBy="#{conseiller.telephone}">
+            <h:outputText value="#{conseiller.telephone}" />
+        </p:column>
+        
+        <p:column headerText="E-Mail" sortBy="#{conseiller.email}">
+            <h:outputText value="#{conseiller.email}" />
+        </p:column>
+    </p:dataTable>
+</h:form>
+
+<!-- camemberts! à relier avec les données en java -->
+<p>Voici les statistiques de l'agence</p>
+<p:chart type="pie" model="#{chartView.pieModel2}" style="width:400px;height:300px" />
+
+		</ui:define>
+
+	</ui:composition>
+</h:body>
+</html>
